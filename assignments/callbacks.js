@@ -29,6 +29,10 @@ function getLength(arr, cb) {
   return cb(arr.length);
 }
 
+getLength([1,2,4,5], function(length) {
+  console.log(length);
+})
+
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
   return cb(arr[arr.length - 1]);
