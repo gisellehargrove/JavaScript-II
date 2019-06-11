@@ -95,7 +95,7 @@ console.log(ticketPriceTotal);
 // Problem 1
 // List the information for each runner in an easy to read format and remind me to send an email to the ones that have donated more than 200 bucks
 runners.forEach(function(element) {
-  let message = element.first_name + element.last_name + ' has donated ' + element.donation + ' bucks.'
+  let message = element.first_name + ' ' + element.last_name + ' has donated ' + element.donation + ' bucks.'
   if(element.donation > 199) {
     message += 'Send ' + element.first_name + ' a thank you email.'
     console.log(message)
