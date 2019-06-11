@@ -102,5 +102,17 @@ runners.forEach(function(element) {
   }
 });
 // Problem 2
+// Since the director is still drunk with power he wants all the last names capitilized as well...
+let allLastNameCapped = [];
+allLastNameCapped.push(runners.map(function(element) {
+  return element.last_name.toUpperCase();
+}));
+console.log(allLastNameCapped);
 
 // Problem 3
+// Director just got back to me and wants to both names put together and capitilized.....
+let allNamesCapped = [];
+allNamesCapped.push(runners.map(function(element) {
+  return element.first_name.toUpperCase() + ' ' + element.last_name.toUpperCase();
+}));
+console.log(allNamesCapped);
