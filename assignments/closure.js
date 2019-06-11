@@ -40,4 +40,3 @@ const factory = counterFactory();
 console.log(factory.increment(), 'counter factory increment');
 console.log(factory.increment(), 'counter factory increment');
 console.log(factory.decrement(), 'counter factory decrement');
-console.log(factory.decrement(), 'counter factory decrement');
