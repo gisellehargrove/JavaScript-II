@@ -37,6 +37,9 @@ const counterFactory = () => {
     // `decrement` should decrement the counter variable and return it.
     decrement: function() {
       return count--;
+    },
+    checkCurrent: function() {
+      return count;
     }
   }
 };

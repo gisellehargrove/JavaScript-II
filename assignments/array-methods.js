@@ -77,12 +77,12 @@ console.log(allCaps, 'ALL CAPS');
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
+
 // we are pushing whatever is returned from our filter method into the large shirts array in the line above
-largeShirts.push(runners.filter(function(element) {
+let largeShirts = runners.filter(function(element) {
   // the filter method will return whatever passes this truth statement and put it into a new array
   if(element.shirt_size === 'L') return element; //<-this if statement will return only if the shirt size property is equal to "L"
-}));
+});
 // log the largeShirts array
 console.log(largeShirts);
 
