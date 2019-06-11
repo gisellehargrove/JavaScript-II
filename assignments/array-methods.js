@@ -56,37 +56,52 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName.
 let fullName = [];
+// iterate through each index in the runners array
 runners.forEach(function(element, index) {
+  // push each element's first and last name into the fullName array
   fullName.push(element.first_name + ' ' + element.last_name)
 });
+// log the fullName array
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 let allCaps = [];
+// reassign the allCaps array to the array that is returned from the map function
 allCaps = runners.map(function(element) {
+  // whatever is returned here will get put into a new array and returned once map is finished iterating
   return element.first_name.toUpperCase()
 });
+// log the allCaps array -> it is now full of the first and last names of each runner from the runners array at the top
 console.log(allCaps, 'ALL CAPS');
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
+// we are pushing whatever is returned from our filter method into the large shirts array in the line above
 largeShirts.push(runners.filter(function(element) {
-  if(element.shirt_size === 'L') return element;
+  // the filter method will return whatever passes this truth statement and put it into a new array
+  if(element.shirt_size === 'L') return element; //<-this if statement will return only if the shirt size property is equal to "L"
 }));
+// log the largeShirts array
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-
+// we are pushing the results of the reduce method into the ticketPriceTotal array in the above line
+// the reduce function reduces an array into a single value depending on your callback function
 ticketPriceTotal.push(runners.reduce(function(accumulator, current) {
+  // we are checking if the accumulator has a donation property first
+  // if it does we want to add the accumulator's donation property and the current donation's property
   if(accumulator.donation) {
     accumulator.donation += current.donation;
   }
+  // whatever is returned here is then it becomes the new accumulator on the next iteration
   return accumulator;
+  // ask how to make this more efficient
 }).donation);
+// log the ticketPriceTotal array into the console
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
